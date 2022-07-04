@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+    {% block body %}
+    {% if problem_list %}
+    <ol>
+        % for problem in problem_list %
+        <li>
+            <a href= "{% url 'judge.problem_detail' problem_id %}">{{problem.name}}</a>
+        </li>
+    </ol>
+    {% else %}
+        <p>
+            No Problem Are Available Now
+        </p>
+    {% endif %}
+       {% endblock body%}
