@@ -1,12 +1,13 @@
 
 {% extends 'base.html' %}
     {% block body %}
-    {% if problem_list %}
+    {% if problems %}
     <ol>
-        % for problem in problem_list %
+        {% for problem in problems %}
         <li>
             <a href= "{% url 'judge.problem_detail' problem_id %}">{{problem.name}}</a>
         </li>
+        {% endfor %}
     </ol>
     {% else %}
         <p>

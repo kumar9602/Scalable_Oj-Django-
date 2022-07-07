@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+    {% if solution %}
+    <ol>
+        {% for solution in solutions %}
+        <li>
+            <p>{{sol.problem.name}} - {{sol.verdict}} - {{sol.submitted}}</p>
+        </li>
+        {% endfor %}
+    </ol>
+    {% else %}
+        <p>
+           No data is Available for now
+        </p>
+    {% endif %}
+{% endblock body%}
